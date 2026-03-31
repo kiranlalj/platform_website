@@ -1,0 +1,108 @@
+<!-- PRICING (005) SECTION COMPONENT -->
+<section id="pricing" class="w-full bg-[#111] border-y border-white/5 px-6 md:px-12 py-24 md:py-32 flex justify-center">
+  <div class="max-w-[1440px] w-full flex flex-col gap-16 md:gap-24 fade-up">
+
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-20">
+      <div class="flex flex-col gap-2 shrink-0">
+        <span class="text-white lg:text-lg font-medium tracking-tight">Pricing</span>
+        <span class="text-white/40 font-mono text-sm">005</span>
+      </div>
+      <div class="flex flex-col gap-6 max-w-3xl">
+        <h3 class="text-3xl md:text-5xl lg:text-6xl font-[500] tracking-[-0.04em] leading-[1.05] text-white">
+          Flexible, transparent plans. Built for clarity and growth.
+        </h3>
+        <p class="text-white/50 text-base md:text-lg leading-relaxed max-w-xl">
+          Scale at your own pace – choose only what you need, when you need it. Nothing extra, nothing locked in.
+        </p>
+      </div>
+    </div>
+
+    <!-- Pricing Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 fade-up text-white">
+
+      <!-- PLAN: STUDIO -->
+      <div class="flex flex-col rounded-[2rem] bg-pf-card border border-white/5 p-8 md:p-12 hover:border-[#EF6D3D]/30 transition-colors duration-500 h-full">
+        <span class="text-white/40 text-sm mb-4">For growing teams</span>
+        <h4 class="text-3xl font-[500] tracking-tight mb-12">Studio</h4>
+        <div class="flex items-baseline gap-1 mb-2">
+          <span class="text-5xl font-mono text-white">$49</span>
+          <span class="text-white/40 text-sm">/mo</span>
+        </div>
+        <p class="text-white/30 text-xs mb-8">Billed annually</p>
+
+        <button class="w-full py-3 mb-10 rounded-full bg-white/10 hover:bg-white text-white hover:text-black font-semibold text-sm transition-all border border-white/20 hover:border-transparent">
+          Select Plan
+        </button>
+
+        <div class="mt-auto">
+          <span class="text-white/60 text-sm font-medium mb-4 block border-b border-white/10 pb-2">Plan Basic</span>
+          <ul class="flex flex-col gap-3 text-white/50 text-sm">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#EF6D3D] text-xs"></i> Smart Deployment</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#EF6D3D] text-xs"></i> Basic Monitoring</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#EF6D3D] text-xs"></i> Core Security</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#EF6D3D] text-xs"></i> Email Support</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#EF6D3D] text-xs"></i> 5 team seats</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PLAN: SCALE (Highlighted) -->
+      <div class="flex flex-col rounded-[2rem] bg-[#1a1a1a]/80 border border-[#EF6D3D]/40 shadow-[0_0_40px_rgba(239,109,61,0.1)] p-8 md:p-12 transition-transform hover:-translate-y-2 duration-500 h-full relative overflow-hidden">
+        <!-- Glow accent -->
+        <div class="absolute top-[-20%] right-[-20%] w-64 h-64 bg-[#EF6D3D]/20 blur-[60px] rounded-full pointer-events-none fade-up"></div>
+
+        <span class="text-white/90 text-sm mb-4 relative z-10">For scaling businesses</span>
+        <h4 class="text-3xl font-[500] tracking-tight mb-12 text-[#EF6D3D] relative z-10">Scale</h4>
+        <div class="flex items-baseline gap-1 mb-2 relative z-10">
+          <span class="text-5xl font-mono text-white">$89</span>
+          <span class="text-white/40 text-sm">/mo</span>
+        </div>
+        <p class="text-white/30 text-xs mb-8 relative z-10">Billed annually</p>
+
+        <button class="w-full py-3 mb-10 rounded-full bg-[#EF6D3D] hover:bg-[#e05828] text-white font-semibold text-sm transition-all shadow-[0_4px_20px_rgba(239,109,61,0.3)] relative z-10">
+          Select Plan
+        </button>
+
+        <div class="mt-auto relative z-10">
+          <span class="text-white/80 text-sm font-medium mb-4 block border-b border-white/10 pb-2">Plan Advanced</span>
+          <ul class="flex flex-col gap-3 text-white/70 text-sm">
+            <li class="flex items-center gap-2 text-white"><i class="fa-solid fa-check text-[#EF6D3D] text-xs"></i> All Studio features</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#EF6D3D] text-xs"></i> AI optimization</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#EF6D3D] text-xs"></i> Advanced monitoring</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#EF6D3D] text-xs"></i> Enhanced security</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#EF6D3D] text-xs"></i> 24/7 support</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PLAN: SUPREME -->
+      <div class="flex flex-col rounded-[2rem] bg-pf-card border border-white/5 p-8 md:p-12 hover:border-[#EF6D3D]/30 transition-colors duration-500 h-full">
+        <span class="text-white/40 text-sm mb-4">For large organizations</span>
+        <h4 class="text-3xl font-[500] tracking-tight mb-12">Supreme</h4>
+        <div class="flex items-baseline gap-1 mb-2">
+          <span class="text-5xl font-mono text-white">$249</span>
+          <span class="text-white/40 text-sm">/mo</span>
+        </div>
+        <p class="text-white/30 text-xs mb-8">Billed annually</p>
+
+        <button class="w-full py-3 mb-10 rounded-full bg-white/10 hover:bg-white text-white hover:text-black font-semibold text-sm transition-all border border-white/20 hover:border-transparent">
+          Contact Sales
+        </button>
+
+        <div class="mt-auto">
+          <span class="text-white/60 text-sm font-medium mb-4 block border-b border-white/10 pb-2">Plan Enterprise</span>
+          <ul class="flex flex-col gap-3 text-white/50 text-sm">
+            <li class="flex items-center gap-2 text-white"><i class="fa-solid fa-check text-[#EF6D3D] text-xs"></i> All Scale features</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#EF6D3D] text-xs"></i> Dedicated support</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#EF6D3D] text-xs"></i> Private hosting</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#EF6D3D] text-xs"></i> Custom security</li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#EF6D3D] text-xs"></i> Enterprise SLA</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

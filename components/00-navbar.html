@@ -1,0 +1,59 @@
+<!-- NAVBAR COMPONENT -->
+<header class="fixed top-0 left-0 w-full z-[1000] px-5 lg:px-10 py-6 flex items-center justify-between pointer-events-none fade-up">
+  <!-- Logo -->
+  <a href="#" class="pointer-events-auto text-[var(--orange)] text-xl md:text-2xl font-[500] tracking-tighter flex items-center gap-1 hover:opacity-80 transition-opacity">
+    plat—form
+  </a>
+
+  <!-- Hamburger Menu Button -->
+  <button id="hamburger-menu" class="pointer-events-auto w-10 h-10 flex flex-col justify-center items-start gap-[0.20rem] group relative bg-transparent transition-colors">
+    <span class="block w-6 h-[2.5px] bg-[var(--orange)] transition-all duration-300"></span>
+    <span class="block w-6 h-[2.5px] bg-[var(--orange)] transition-all duration-300"></span>
+    <span class="block w-2 h-[2.5px] bg-[var(--orange)] group-hover:w-6 transition-all duration-300"></span>
+  </button>
+</header>
+
+<!-- Right Drawer Menu -->
+<div id="backdrop" class="fixed inset-0 bg-black/60 z-[1001] opacity-0 pointer-events-none transition-opacity duration-500"></div>
+
+<div id="mobile-menu-overlay" class="fixed top-0 right-0 w-full sm:w-[450px] lg:w-[500px] h-[100svh] bg-[#0a0a0a]/70 backdrop-blur-2xl border-l border-white/5 z-[1002] transform -translate-y-full transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] flex flex-col py-10 px-8 sm:px-16 overflow-y-auto">
+  
+  <!-- Close Button -->
+  <div class="flex justify-end w-full mb-12">
+    <button id="close-menu" class="w-12 h-12 border border-white/50 flex flex-col justify-center items-center relative group hover:border-white transition-colors rounded-sm shadow-sm bg-black/10">
+      <span class="block absolute w-5 h-[1.5px] bg-white transform rotate-45 transition-colors"></span>
+      <span class="block absolute w-5 h-[1.5px] bg-white transform -rotate-45 transition-colors"></span>
+    </button>
+  </div>
+
+  <nav class="flex flex-col gap-3 text-right">
+    <a href="#" class="menu-link text-3xl md:text-[2.5rem] font-[500] tracking-[-0.04em] text-white/90 hover:text-white transition-colors">Home</a>
+    <a href="#work" class="menu-link text-3xl md:text-[2.5rem] font-[500] tracking-[-0.04em] text-white/90 hover:text-white transition-colors">Work</a>
+    <a href="#services" class="menu-link text-3xl md:text-[2.5rem] font-[500] tracking-[-0.04em] text-white/90 hover:text-white transition-colors">Services</a>
+    <a href="#process" class="menu-link text-3xl md:text-[2.5rem] font-[500] tracking-[-0.04em] text-white/90 hover:text-white transition-colors">Process</a>
+    <a href="#analytics" class="menu-link text-3xl md:text-[2.5rem] font-[500] tracking-[-0.04em] text-white/90 hover:text-white transition-colors">Smart Analytics</a>
+    <a href="#pricing" class="menu-link text-3xl md:text-[2.5rem] font-[500] tracking-[-0.04em] text-white/90 hover:text-white transition-colors">Pricing</a>
+    <a href="#faq" class="menu-link text-3xl md:text-[2.5rem] font-[500] tracking-[-0.04em] text-white/90 hover:text-white transition-colors">FAQ</a>
+    <a href="#team" class="menu-link text-3xl md:text-[2.5rem] font-[500] tracking-[-0.04em] text-white/90 hover:text-white transition-colors">The Team</a>
+    <a href="#testimonial" class="menu-link text-3xl md:text-[2.5rem] font-[500] tracking-[-0.04em] text-white/90 hover:text-white transition-colors">Testimonials</a>
+    <a href="#labs" class="menu-link text-3xl md:text-[2.5rem] font-[500] tracking-[-0.04em] text-white/90 hover:text-white transition-colors">Platform Labs®</a>
+    <a href="#contact" class="menu-link text-3xl md:text-[2.5rem] font-[500] tracking-[-0.04em] text-white hover:opacity-80 transition-opacity">Contact</a>
+  </nav>
+
+  <div class="w-full h-[1px] bg-white/30 my-8"></div>
+
+  <div class="flex flex-col gap-2.5 text-right">
+    <a href="#" class="text-white/90 hover:text-white text-[0.85rem] font-[600] transition-colors">Terms of Service</a>
+    <a href="#" class="text-white/90 hover:text-white text-[0.85rem] font-[600] transition-colors">Privacy Policy</a>
+    <a href="#" class="text-white/90 hover:text-white text-[0.85rem] font-[600] transition-colors">GDPR Compliance</a>
+    <a href="#" class="text-white/90 hover:text-white text-[0.85rem] font-[600] transition-colors">Data Protection</a>
+    <a href="#" class="text-white/90 hover:text-white text-[0.85rem] font-[600] transition-colors">404</a>
+  </div>
+
+  <div class="flex justify-end mt-auto pt-16">
+    <button class="bg-[#222] hover:bg-black text-white text-xs font-[600] px-5 py-3 rounded-lg flex items-center gap-2 transition-colors border border-white/10">
+      Buy Template <i class="fa-solid fa-arrow-right text-[10px]"></i>
+    </button>
+  </div>
+
+</div>

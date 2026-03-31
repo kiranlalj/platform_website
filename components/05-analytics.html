@@ -1,0 +1,134 @@
+<!-- SMART ANALYTICS (004) SECTION COMPONENT -->
+<section id="analytics" class="w-full bg-[#111] border-y border-white/5 px-6 md:px-12 py-24 md:py-32 flex justify-center">
+  <div class="max-w-[1440px] w-full flex flex-col gap-16 md:gap-24 fade-up">
+
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-20">
+      <div class="flex flex-col gap-2 shrink-0">
+        <span class="text-white lg:text-lg font-medium tracking-tight">Smart Analytics</span>
+        <span class="text-white/40 font-mono text-sm">004</span>
+      </div>
+      <div class="flex flex-col gap-6 max-w-3xl">
+        <h3 class="text-3xl md:text-5xl lg:text-6xl font-[500] tracking-[-0.04em] leading-[1.05] text-white">
+          Monitor and performance with actionable data insights.
+        </h3>
+        <p class="text-white/50 text-base md:text-lg leading-relaxed max-w-xl">
+          Real-time metrics that help you make better decisions, faster.
+        </p>
+      </div>
+    </div>
+
+    <!-- Top Dashboard Area -->
+    <div class="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6 mt-12 fade-up">
+      
+      <!-- System Health Bar / Data Segments -->
+      <div class="flex flex-col gap-6">
+        <div class="rounded-[2rem] bg-pf-card border border-white/5 p-8 flex flex-col justify-between h-full hover:border-pf-orange/30 transition-colors">
+          <div class="flex justify-between w-full mb-8">
+            <span class="text-white font-[500]">System Health</span>
+            <span class="text-white/40 text-sm">Real-time platform vitals</span>
+          </div>
+
+          <!-- Color Bars -->
+          <div class="flex items-center gap-2 w-full h-8 rounded-full overflow-hidden mt-6 mb-8">
+            <div class="bg-[#EF6D3D] w-[66%] h-full"></div>
+            <div class="bg-[#EF6D3D]/40 w-[25%] h-full"></div>
+            <div class="bg-red-500/80 w-[9%] h-full"></div>
+          </div>
+
+          <!-- Legend -->
+          <div class="flex justify-between w-full">
+            <div class="flex flex-col">
+              <span class="text-2xl text-white font-[500]">66%</span>
+              <span class="text-white/40 text-xs mt-1 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#EF6D3D]"></span> Optimal</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-2xl text-white font-[500]">25%</span>
+              <span class="text-white/40 text-xs mt-1 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#EF6D3D]/40"></span> Stable</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-2xl text-white font-[500]">9%</span>
+              <span class="text-white/40 text-xs mt-1 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-500"></span> Issues</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Network Stats Box -->
+      <div class="rounded-[2rem] bg-pf-black border border-white/5 p-8 flex flex-col justify-between h-full hover:border-[#EF6D3D]/30 transition-colors">
+        <span class="text-white/50 text-sm font-medium mb-8">Global System Status</span>
+        <div class="flex items-end justify-between w-full border-b border-white/10 pb-6 mb-6">
+          <span class="text-white/50 font-mono text-sm">30-day monitoring</span>
+          <div class="flex items-baseline gap-1">
+            <span class="text-white font-[500] text-3xl">99.9</span>
+            <span class="text-[#EF6D3D] text-lg">%</span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="flex justify-between text-sm">
+            <span class="text-white">Amsterdam</span><span class="text-[#EF6D3D]">24ms &rarr; 11ms</span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-white">New York</span><span class="text-[#EF6D3D]">37ms &rarr; 19ms</span>
+          </div>
+          <div class="flex justify-between text-sm">
+             <span class="text-white">Dubai</span><span class="text-[#EF6D3D]">Scaling</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Dashboard Area -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 fade-up">
+      <!-- Chart card -->
+      <div class="col-span-1 lg:col-span-2 rounded-[2rem] bg-[#1a1a1a]/50 border border-white/5 p-8 flex flex-col h-[400px]">
+        <span class="text-white font-[500] mb-2">Performance</span>
+        <span class="text-white/40 text-xs mb-8">Current performance metrics</span>
+        
+        <!-- Mock Chart -->
+        <div class="relative w-full h-full flex items-end justify-between gap-4 mt-auto border-b border-white/10 pb-4">
+          <div class="w-full bg-[#EF6D3D]/20 h-[50%] rounded-t-sm hover:bg-[#EF6D3D]/50 transition-colors cursor-pointer group relative">
+             <span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity">Q1</span>
+          </div>
+          <div class="w-full bg-[#EF6D3D]/40 h-[75%] rounded-t-sm hover:bg-[#EF6D3D]/80 transition-colors cursor-pointer group relative">
+             <span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity">Q2</span>
+          </div>
+          <div class="w-full bg-[#EF6D3D] h-[95%] rounded-t-sm hover:bg-[#EF6D3D] shadow-[0_0_20px_rgba(239,109,61,0.5)] transition-colors cursor-pointer group relative">
+             <span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity">Q3</span>
+          </div>
+          <div class="w-full bg-[#EF6D3D]/60 h-[85%] rounded-t-sm hover:bg-[#EF6D3D] transition-colors cursor-pointer group relative">
+             <span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity">Q4</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Evolution Score -->
+      <div class="col-span-1 rounded-[2rem] bg-pf-card border border-white/5 p-8 flex flex-col">
+        <span class="text-white font-[500] mb-2">System Evolution</span>
+        <span class="text-white/40 text-xs mb-8">The pulse of progress</span>
+        
+        <div class="flex items-end gap-2 mb-12">
+          <span class="text-6xl text-white font-[500] leading-none">86</span>
+          <span class="text-white/30 text-xl font-mono pb-1">/100</span>
+        </div>
+
+        <div class="flex flex-col gap-4 mt-auto">
+           <div class="flex justify-between items-center bg-white/5 p-3 rounded-xl border border-white/10">
+             <span class="text-white text-sm">Integration</span>
+             <span class="text-white/60 font-mono text-sm">38%</span>
+           </div>
+           <div class="flex justify-between items-center bg-white/5 p-3 rounded-xl border border-white/10">
+             <span class="text-white text-sm">Efficiency</span>
+             <span class="text-white/60 font-mono text-sm">79%</span>
+           </div>
+           <div class="flex justify-between items-center bg-white/5 p-3 rounded-xl border border-white/10">
+             <span class="text-white text-sm">Security</span>
+             <span class="text-[#EF6D3D] font-mono text-sm">92%</span>
+           </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
