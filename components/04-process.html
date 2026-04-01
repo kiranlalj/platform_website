@@ -1,6 +1,6 @@
 <!-- PROCESS (003) SECTION COMPONENT -->
-<section id="process" class="w-full bg-[#0a0a0a] min-h-screen relative px-5 lg:px-10 py-24 md:py-32 flex justify-center border-t border-white/5">
-   <div class="max-w-[1500px] w-full flex flex-col fade-up">
+<section id="process" class="w-full bg-[#0a0a0a] min-h-screen relative px-5 lg:px-10 py-24 md:py-32 flex flex-col items-center justify-center border-t border-white/5">
+   <div class="max-w-[1500px] w-full flex flex-col fade-up mx-auto">
  
      <!-- Header -->
      <div class="flex flex-col w-full pb-16 lg:pb-24">
@@ -38,76 +38,113 @@
         </div>
      </div>
  
-     <!-- Process Grid Container -->
-     <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mt-8 h-auto lg:h-[650px]">
+     <!-- Process 3-Zone Grid Container -->
+     <div class="w-full grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-4 lg:gap-6 mt-8 h-auto lg:h-[650px] xl:h-[700px]">
        
-       <!-- Left Media Box -->
-       <div class="rounded-[2rem] bg-[#0c0c0c] border border-white/5 overflow-hidden relative min-h-[400px] lg:min-h-full w-full group">
-          <!-- Placeholder Video/Image Block -->
-          <img src="https://framerusercontent.com/images/1W3w31o6Y2n8t7bN27B8m6t0s.png" alt="3D Process Render" class="w-full h-full object-cover opacity-80 mix-blend-screen scale-100 group-hover:scale-105 transition-transform duration-[2s] ease-out">
+       <!-- Left Media Box (Zone 1) -->
+       <div class="rounded-[2rem] bg-[#0c0c0c] border border-white/5 overflow-hidden relative min-h-[400px] lg:min-h-full w-full group flex items-center justify-center">
+          <!-- Dynamic Process Image -->
+          <img src="https://framerusercontent.com/images/BcMyu3r4mdvM3bClIAqgMkp35YY.png" id="ps-media" alt="Process Render" class="w-full h-[90%] object-contain mix-blend-screen scale-[1.02] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]">
        </div>
  
-       <!-- Right Interactive Content & Controls Box -->
-       <div class="flex flex-col w-full h-full rounded-[2rem] border border-white/5 overflow-hidden relative">
+       <!-- Right Master Interaction Box (Zones 2 & 3) -->
+       <div class="flex flex-col md:flex-row w-full h-full rounded-[2rem] border border-white/5 overflow-hidden relative bg-[#121212]">
           
-          <!-- Top Row: Process Info & Navigation -->
-          <div class="flex flex-row items-stretch w-full bg-[#161616] border-b border-white/5 h-[100px] lg:h-[120px] shrink-0 relative z-10">
+          <!-- Middle Column (Zone 2: Text Content) -->
+          <div class="flex-[1.5] flex flex-col w-full h-full border-b md:border-b-0 md:border-r border-white/5 relative z-10">
              
-             <!-- Platform Process Label & Tracker Dots -->
-             <div class="flex items-center justify-between flex-1 px-8 md:px-12">
-                <span class="text-white/60 text-lg md:text-[20px] font-medium tracking-tight">Platform Process</span>
+             <!-- Top Strip: Process Tracking -->
+             <div class="flex items-center justify-between px-8 md:px-12 h-[90px] lg:h-[110px] border-b border-white/5 bg-[#161616] shrink-0">
+                <span class="text-white/50 text-base md:text-[20px] font-medium tracking-tight">Platform Process</span>
                 
-                <!-- Dots Container tied to interactions.js -->
+                <!-- Tracker Dots -->
                 <div id="ps-dots" class="flex gap-[6px] items-center">
+                   <!-- Injected dynamically by interactions.js -->
                    <div class="h-2 w-8 bg-[#f95738] rounded-full transition-all duration-300 shadow-[0_0_10px_rgba(249,87,56,0.3)]"></div>
                    <div class="h-[6px] w-[6px] bg-white/20 hover:bg-white/40 cursor-pointer rounded-full transition-all duration-300"></div>
                    <div class="h-[6px] w-[6px] bg-white/20 hover:bg-white/40 cursor-pointer rounded-full transition-all duration-300"></div>
                    <div class="h-[6px] w-[6px] bg-white/20 hover:bg-white/40 cursor-pointer rounded-full transition-all duration-300"></div>
                 </div>
              </div>
- 
-             <!-- Next/Prev Buttons -->
-             <div class="flex justify-center items-center w-[120px] lg:w-[140px] shrink-0 gap-6 px-4 border-l border-white/5">
-                <button id="ps-prev" class="text-[#f95738] hover:text-[#ff785a] transition-all cursor-not-allowed opacity-40 group outline-none">
-                   <svg class="w-6 h-6 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-                </button>
-                <button id="ps-next" class="text-[#f95738] hover:text-[#ff785a] transition-all group outline-none">
-                   <svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                </button>
+
+             <!-- Bottom Content Stage -->
+             <div class="flex-1 flex flex-col justify-start p-8 md:p-12 relative z-0">
+                <i id="ps-icon" class="hidden absolute opacity-0 pointer-events-none"></i>
+    
+                <div class="flex flex-col transition-all duration-[600ms] w-full mt-4 h-full">
+                   <h4 id="ps-title" class="text-3xl lg:text-[2.2rem] xl:text-[2.4rem] font-[400] tracking-[-0.03em] text-[#e5e5e5] leading-[1.2] mb-6">
+                      Step 1 — Smart Connect
+                   </h4>
+                   
+                   <p id="ps-desc" class="text-white/40 text-[15px] leading-[1.8] max-w-xl">
+                      Platform’s AI analyzes your tech stack and swiftly configures your ideal environment. One connection is all it takes to set everything up following industry best practices.
+                   </p>
+    
+                   <div class="mt-auto flex items-center gap-6 relative" style="margin-top:auto;">
+                      <div id="ps-metric" class="text-[3rem] md:text-[3.5rem] lg:text-[4rem] tracking-tight font-[300] text-white/90">
+                        30<span class="text-lg md:text-xl text-white/30 ml-2 font-normal">sec</span>
+                      </div>
+                      <span id="ps-metric-label" class="text-white/30 text-[13px] max-w-[150px] leading-relaxed ml-2 font-medium tracking-wide">
+                        Average connection time
+                      </span>
+                   </div>
+                </div>
              </div>
           </div>
- 
-          <!-- Bottom Content Data Area -->
-          <div class="flex-1 flex flex-col justify-start bg-[#121212] p-8 md:p-12 lg:p-14 relative z-0 min-h-[400px]">
-             <!-- Hidden icon necessary for script binding, styled away so it doesn't break flow -->
-             <i id="ps-icon" class="hidden absolute opacity-0 w-0 h-0 fa-solid fa-cube text-transparent pointer-events-none"></i>
- 
-             <div class="flex flex-col transition-all duration-[600ms] w-full mt-4 h-full">
-                <!-- Data Targets for interactions.js -->
-                <h4 id="ps-title" class="text-3xl lg:text-[2.4rem] xl:text-[2.6rem] font-[400] tracking-[-0.03em] text-white leading-[1.15] mb-8">
-                   Step 1 — Smart Connect
-                </h4>
+
+          <!-- Rightmost Column (Zone 3: Arrows & CTA) -->
+          <div class="flex-[1] flex flex-col w-full h-full relative z-10 shrink-0">
+            
+             <!-- Top Arrow Controls -->
+             <div class="flex justify-center items-center gap-8 h-[90px] lg:h-[110px] border-b border-white/5 bg-[#161616] shrink-0">
+                <button id="ps-prev" class="text-[#f95738] hover:text-[#ff785a] transition-all cursor-not-allowed opacity-30 group outline-none">
+                   <svg class="w-6 h-6 transform lg:group-hover:-translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                </button>
+                <button id="ps-next" class="text-[#f95738] hover:text-[#ff785a] transition-all group outline-none relative before:content-[''] before:absolute before:-inset-3 before:border before:border-[#f95738]/0 hover:before:border-[#f95738]/50 before:rounded-full before:transition-all before:duration-500">
+                   <svg class="w-6 h-6 transform lg:group-hover:translate-x-1 transition-transform duration-300 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </button>
+             </div>
+
+             <!-- Bottom CTA Block -->
+             <div class="flex-1 flex flex-col justify-center items-center p-8 bg-[#161616] text-center">
+                <button class="bg-[#f95738] rounded-xl py-[10px] px-6 text-[#111] font-[600] text-[15px] flex items-center justify-center gap-3 w-auto hover:brightness-110 hover:scale-[1.02] shadow-[0_4px_20px_rgba(249,87,56,0.3)] transition-all duration-300 border border-[#ff7054] tracking-tight">
+                   <svg class="w-[18px] h-[18px] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                   Book a Demo
+                </button>
                 
-                <p id="ps-desc" class="text-white/40 text-[14.5px] leading-[1.9] max-w-xl">
-                   Platform’s AI analyzes your tech stack and swiftly configures your ideal environment. One connection is all it takes to set everything up following industry best practices.
+                <p class="text-white/30 text-[13.5px] leading-relaxed mt-10 max-w-[150px]">
+                   Book a demo to see this process in action.
                 </p>
- 
-                <div class="mt-auto flex items-center gap-6 relative">
-                   <!-- Decorative accent above metrics -->
-                   <div class="absolute -top-10 left-0 w-8 h-[1px] bg-[#f95738]/50"></div>
-                   
-                   <div id="ps-metric" class="text-5xl md:text-[3.5rem] tracking-tight font-light text-[#e5e5e5]">
-                     30<span class="text-xl md:text-2xl text-white/40 ml-2 font-normal">sec</span>
-                   </div>
-                   <span id="ps-metric-label" class="text-white/40 text-[13px] md:text-sm max-w-[150px] leading-relaxed ml-4 font-medium tracking-wide">
-                     Average connection time
-                   </span>
-                </div>
              </div>
           </div>
  
        </div>
      </div>
  
+     <!-- Section Footer Elements -->
+     <div class="w-full flex justify-between items-end mt-12 md:mt-24">
+        <!-- Dashed pattern bottom-left -->
+        <div class="flex gap-1.5 opacity-30 px-2 pb-4">
+           <div class="w-1.5 h-4 rounded-sm bg-white/20"></div>
+           <div class="w-1.5 h-4 rounded-sm bg-white/40"></div>
+           <div class="w-1.5 h-4 rounded-sm bg-pf-orange shadow-[0_0_8px_rgba(249,87,56,0.8)]"></div>
+           <div class="w-1.5 h-4 rounded-sm bg-white/20"></div>
+           <div class="w-1.5 h-4 rounded-sm bg-white/20"></div>
+           <div class="w-1.5 h-4 rounded-sm bg-white/20"></div>
+           <div class="w-1.5 h-4 rounded-sm bg-white/20"></div>
+           <div class="w-1.5 h-4 rounded-sm bg-white/20"></div>
+           <div class="w-1.5 h-4 rounded-sm bg-white/20"></div>
+           <div class="w-1.5 h-4 rounded-sm bg-white/20"></div>
+        </div>
+        
+        <!-- Questions Text bottom-right -->
+        <div class="flex items-center gap-6">
+           <span class="text-[#e5e5e5] text-[15px] tracking-tight font-medium hidden md:block">Questions about our process? We're here to help.</span>
+           <button class="w-12 h-12 bg-[#f95738] hover:bg-[#ff7054] text-white flex items-center justify-center rounded-[0.8rem] transition-colors shadow-lg">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+           </button>
+        </div>
+     </div>
+
    </div>
  </section>

@@ -217,10 +217,10 @@ function initInteractions() {
   const psTitle = document.getElementById('ps-title');
   if (psTitle) {
     const data = [
-      { title: "Step 1 — Smart Connect", desc: "Platform’s AI analyzes your tech stack and swiftly configures your ideal environment. One connection is all it takes to set everything up following industry best practices.", metric: "30", metricUnit: "sec", metricLbl: "Average connection time", icon: "fa-cube" },
-      { title: "Step 2 — Design Generation", desc: "Our system automatically drafts complete architectural diagrams customized perfectly to your data flows safely across global zones.", metric: "1.2", metricUnit: "s", metricLbl: "Design latency", icon: "fa-pen-nib" },
-      { title: "Step 3 — Build Ecosystem", desc: "Dependencies and containers are provisioned natively, bringing your application up with multi-node redundancy in an instant.", metric: "99", metricUnit: "%", metricLbl: "Automation rate", icon: "fa-network-wired" },
-      { title: "Step 4 — Auto Guard", desc: "Platform’s adaptive security layer kicks in to protect your system 24/7. It learns and evolves with new threats without manual intervention.", metric: "10", metricUnit: "sec", metricLbl: "Average threat detection", icon: "fa-shield-halved" }
+      { title: "Step 1 — Smart Connect", desc: "Platform’s AI analyzes your tech stack and swiftly configures your ideal environment. One connection is all it takes to set everything up following industry best practices.", metric: "30", metricUnit: "sec", metricLbl: "Average connection time", image: "https://framerusercontent.com/images/BcMyu3r4mdvM3bClIAqgMkp35YY.png" },
+      { title: "Step 2 — Auto Optimize", desc: "Once connected, our system continuously fine-tunes configurations and resource allocation in real time. The platform adapts to your usage patterns, ensuring peak performance and efficiency without manual tweaking.", metric: "55", metricUnit: "sec", metricLbl: "Average optimization time", image: "https://framerusercontent.com/images/kEN8Z3RmSIaUolb0SFQR5nLtDc.png" },
+      { title: "Step 3 — Scale Ready", desc: "As your needs grow, Platform automatically scales your infrastructure up or down. Capacity is adjusted on the fly so you maintain speed and stability under any load, without over-provisioning or downtime.", metric: "3", metricUnit: "min", metricLbl: "Average scaling time", image: "https://framerusercontent.com/images/w1Wwbm56oEOInYFIMPPw0xdHA.png" },
+      { title: "Step 4 — Auto Guard", desc: "Platform's adaptive security layer kicks in to protect your system 24/7. It learns and evolves with new threats, providing advanced threat prevention and keeping your infrastructure secure — all without manual intervention.", metric: "10", metricUnit: "sec", metricLbl: "Average threat detection", image: "https://framerusercontent.com/images/egQMbLFcoSPrqKQXUz80CpbxdCQ.jpg" }
     ];
     
     let index = 0;
@@ -229,21 +229,21 @@ function initInteractions() {
       desc: document.getElementById('ps-desc'),
       metric: document.getElementById('ps-metric'),
       label: document.getElementById('ps-metric-label'),
-      icon: document.getElementById('ps-icon'),
+      media: document.getElementById('ps-media'),
       prev: document.getElementById('ps-prev'),
       next: document.getElementById('ps-next'),
       dots: document.getElementById('ps-dots').children
     };
 
     function renderSlider() {
-      [ui.title, ui.desc, ui.metric, ui.label, ui.icon].forEach(e => { if(e) e.style.opacity = '0'; });
+      [ui.title, ui.desc, ui.metric, ui.label, ui.media].forEach(e => { if(e) e.style.opacity = '0'; });
       
       setTimeout(() => {
         if(ui.title) ui.title.innerText = data[index].title;
         if(ui.desc) ui.desc.innerText = data[index].desc;
-        if(ui.metric) ui.metric.innerHTML = `${data[index].metric}<span class="text-xl md:text-2xl text-white/40 ml-2 font-normal">${data[index].metricUnit}</span>`;
+        if(ui.metric) ui.metric.innerHTML = `${data[index].metric}<span class="text-lg md:text-xl text-white/30 ml-2 font-normal">${data[index].metricUnit}</span>`;
         if(ui.label) ui.label.innerText = data[index].metricLbl;
-        if(ui.icon) ui.icon.className = `fa-solid ${data[index].icon} text-7xl md:text-9xl text-white transition-all duration-700`;
+        if(ui.media) ui.media.src = data[index].image;
         
         if(ui.dots) {
           Array.from(ui.dots).forEach((d, i) => {
@@ -252,15 +252,15 @@ function initInteractions() {
         }
 
         if(ui.prev) {
-          ui.prev.classList.toggle('opacity-40', index === 0);
+          ui.prev.classList.toggle('opacity-30', index === 0);
           ui.prev.classList.toggle('cursor-not-allowed', index === 0);
         }
         if(ui.next) {
-          ui.next.classList.toggle('opacity-40', index === data.length - 1);
+          ui.next.classList.toggle('opacity-30', index === data.length - 1);
           ui.next.classList.toggle('cursor-not-allowed', index === data.length - 1);
         }
 
-        [ui.title, ui.desc, ui.metric, ui.label, ui.icon].forEach(e => { if(e) e.style.opacity = '1'; });
+        [ui.title, ui.desc, ui.metric, ui.label, ui.media].forEach(e => { if(e) e.style.opacity = '1'; });
       }, 300);
     }
 
