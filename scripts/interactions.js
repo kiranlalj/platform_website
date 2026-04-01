@@ -217,10 +217,10 @@ function initInteractions() {
   const psTitle = document.getElementById('ps-title');
   if (psTitle) {
     const data = [
-      { title: "Step 1 — Smart Connect", desc: "Platform’s AI analyzes your tech stack and swiftly configures your ideal environment. One connection is all it takes to set everything up following industry best practices.", metric: "30", metricUnit: "sec", metricLbl: "Average connection time", image: "https://framerusercontent.com/images/BcMyu3r4mdvM3bClIAqgMkp35YY.png" },
-      { title: "Step 2 — Auto Optimize", desc: "Once connected, our system continuously fine-tunes configurations and resource allocation in real time. The platform adapts to your usage patterns, ensuring peak performance and efficiency without manual tweaking.", metric: "55", metricUnit: "sec", metricLbl: "Average optimization time", image: "https://framerusercontent.com/images/kEN8Z3RmSIaUolb0SFQR5nLtDc.png" },
-      { title: "Step 3 — Scale Ready", desc: "As your needs grow, Platform automatically scales your infrastructure up or down. Capacity is adjusted on the fly so you maintain speed and stability under any load, without over-provisioning or downtime.", metric: "3", metricUnit: "min", metricLbl: "Average scaling time", image: "https://framerusercontent.com/images/w1Wwbm56oEOInYFIMPPw0xdHA.png" },
-      { title: "Step 4 — Auto Guard", desc: "Platform's adaptive security layer kicks in to protect your system 24/7. It learns and evolves with new threats, providing advanced threat prevention and keeping your infrastructure secure — all without manual intervention.", metric: "10", metricUnit: "sec", metricLbl: "Average threat detection", image: "https://framerusercontent.com/images/egQMbLFcoSPrqKQXUz80CpbxdCQ.jpg" }
+      { title: "Step 1 — Smart Connect", desc: "Platform’s AI analyzes your tech stack and swiftly configures your ideal environment. One connection is all it takes to set everything up following industry best practices.", metric: "30", metricUnit: "sec", metricLbl: "Average connection time", image: "https://framerusercontent.com/images/1cdanDHiXl29Fvv4Cs7zAkPS0.jpg" },
+      { title: "Step 2 — Auto Optimize", desc: "Once connected, our system continuously fine-tunes configurations and resource allocation in real time. The platform adapts to your usage patterns, ensuring peak performance and efficiency without manual tweaking.", metric: "55", metricUnit: "sec", metricLbl: "Average optimization time", image: "https://framerusercontent.com/images/HGUyRo3Ko6fOp6Ks3LrpzaNBBVk.jpg" },
+      { title: "Step 3 — Scale Ready", desc: "As your needs grow, Platform automatically scales your infrastructure up or down. Capacity is adjusted on the fly so you maintain speed and stability under any load, without over-provisioning or downtime.", metric: "3", metricUnit: "min", metricLbl: "Average scaling time", image: "https://framerusercontent.com/images/ukKikzoLdTBSJugvA1C94bIp4.jpeg" },
+      { title: "Step 4 — Auto Guard", desc: "Platform's adaptive security layer kicks in to protect your system 24/7. It learns and evolves with new threats, providing advanced threat prevention and keeping your infrastructure secure — all without manual intervention.", metric: "10", metricUnit: "sec", metricLbl: "Average threat detection", image: "https://framerusercontent.com/images/225d0nciRq6DjfvPI1KMQDPP4.jpeg" }
     ];
     
     let index = 0;
@@ -250,22 +250,12 @@ function initInteractions() {
             d.className = i === index ? "h-2 w-8 bg-[#f95738] rounded-full transition-all duration-300 shadow-[0_0_10px_rgba(249,87,56,0.3)]" : "h-[6px] w-[6px] bg-white/20 hover:bg-white/40 cursor-pointer rounded-full transition-all duration-300";
           });
         }
-
-        if(ui.prev) {
-          ui.prev.classList.toggle('opacity-30', index === 0);
-          ui.prev.classList.toggle('cursor-not-allowed', index === 0);
-        }
-        if(ui.next) {
-          ui.next.classList.toggle('opacity-30', index === data.length - 1);
-          ui.next.classList.toggle('cursor-not-allowed', index === data.length - 1);
-        }
-
         [ui.title, ui.desc, ui.metric, ui.label, ui.media].forEach(e => { if(e) e.style.opacity = '1'; });
       }, 300);
     }
 
-    if(ui.next) ui.next.addEventListener('click', () => { if(index < data.length-1) { index++; renderSlider(); } });
-    if(ui.prev) ui.prev.addEventListener('click', () => { if(index > 0) { index--; renderSlider(); } });
+    if(ui.next) ui.next.addEventListener('click', () => { index = (index + 1) % data.length; renderSlider(); });
+    if(ui.prev) ui.prev.addEventListener('click', () => { index = (index - 1 + data.length) % data.length; renderSlider(); });
     
     // Add dot click handlers
     if(ui.dots) {
