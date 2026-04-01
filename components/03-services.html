@@ -48,33 +48,43 @@
          <!-- TAB 01 -->
          <div class="acc-tab hover:brightness-110 flex-[4] h-full rounded-[2rem] transition-all duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)] overflow-hidden bg-pf-orange p-6 md:p-8 relative cursor-pointer group flex flex-col justify-between" data-tab="1">
             
-            <div class="w-full flex items-start z-10">
-               <svg class="w-8 h-8 lg:w-10 lg:h-10 text-white/90 transition-transform duration-500 group-hover:scale-110 mr-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 7h10v10M17 7L6 18"/></svg>
-               <span class="text-4xl lg:text-5xl font-light tracking-tight text-white/90 transition-all duration-700">01</span>
+            <div class="w-full flex flex-col items-start z-10">
+               <div class="w-10 h-[1px] bg-white/20 mb-6 acc-line transition-opacity duration-300 hidden"></div>
+               <div class="flex items-center">
+                  <div class="acc-icon-inactive hidden mr-2">
+                     <svg class="w-7 h-7 text-white/40 transition-colors duration-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14m-5-5l5 5 5-5"/></svg>
+                  </div>
+                  <div class="acc-icon-active block mr-4">
+                     <svg class="w-8 h-8 lg:w-10 lg:h-10 text-white/90 transition-transform duration-500 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 7h10v10M17 7L6 18"/></svg>
+                  </div>
+                  <span class="acc-num text-4xl lg:text-5xl font-light tracking-tight text-white/80 transition-all duration-700">01</span>
+               </div>
             </div>
 
-            <div class="acc-content w-full flex flex-col justify-end opacity-100 transition-opacity duration-700 delay-200 mt-auto h-full absolute inset-0 p-6 md:p-8 bg-gradient-to-t from-pf-orange/90 via-pf-orange/0 to-transparent z-0">
-               <div class="mt-auto pointer-events-none">
-                  <!-- Image placeholder -> user's screenshot uses an image but we can insert the robotic nozzle -->
-                  <div class="w-full h-[180px] lg:h-[220px] rounded-[1.5rem] overflow-hidden mb-6 mt-16 shadow-xl transform translate-y-0 transition-all duration-[800ms] delay-300 acc-graphics">
-                     <img src="https://framerusercontent.com/images/cjUCrOUpaHvRub5zRJbuwPVTmSY.jpg?width=800&height=800" class="w-full h-full object-cover">
-                  </div>
-
-                  <h4 class="text-white text-3xl font-[500] tracking-tight mb-4">Neural Network</h4>
-                  <p class="text-white/90 text-sm leading-relaxed max-w-[90%]">
+            <div class="acc-content w-full flex flex-col pt-12 opacity-100 transition-opacity duration-700 delay-200 h-full absolute inset-0 p-6 md:p-8 z-0">
+               <div class="mt-auto pointer-events-none w-full flex flex-col h-full justify-end pb-8">
+                  <h4 class="text-white text-[1.8rem] lg:text-[2rem] font-[500] tracking-[-0.03em] leading-tight mb-4 pointer-events-auto">Neural Network</h4>
+                  <p class="text-white/90 text-[13px] leading-relaxed max-w-[95%] mb-6 pointer-events-auto">
                      A self-learning intelligence core that observes, learns, and makes smart decisions in milliseconds to optimize your operations.
                   </p>
                   
-                  <div class="flex items-center gap-2 mt-8 text-white/90 font-medium tracking-tight mb-2 text-sm">
-                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 12c2.5-2.5 5.5-2.5 8 0s5.5 2.5 8 0M4 12h16"/></svg>
+                  <div class="w-full h-auto min-h-[160px] lg:min-h-[220px] rounded-[1.5rem] overflow-hidden shadow-xl transform translate-y-0 transition-all duration-[800ms] delay-300 acc-graphics pointer-events-auto flex-1 mb-8 bg-black/10">
+                     <!-- Replace src below -->
+                     <img src="https://framerusercontent.com/images/cjUCrOUpaHvRub5zRJbuwPVTmSY.jpg?width=800&height=800" class="w-full h-full object-cover">
+                  </div>
+                  
+                  <div class="flex items-center gap-2 text-white/90 font-medium tracking-tight text-[13px] pointer-events-auto mt-auto">
+                     <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 10c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>
                      learning
                   </div>
                </div>
             </div>
 
-            <!-- Inactive Title (Hidden on Active) -->
-            <div class="acc-title-inactive absolute bottom-8 left-6 md:left-8 opacity-0 transition-opacity duration-300 z-10 pointer-events-none">
-               <span class="text-white/40 group-hover:text-white/80 tracking-wide text-sm">neural network</span>
+            <div class="acc-title-inactive absolute bottom-8 left-6 md:left-8 opacity-0 transition-opacity duration-300 z-10 pointer-events-none hidden">
+               <div class="flex items-center overflow-hidden transition-all duration-300 group-hover:text-[#f95738] text-white/40 pointer-events-auto cursor-pointer pb-[4px]">
+                  <svg class="w-0 h-5 opacity-0 inline-block -ml-2 group-hover:w-5 group-hover:opacity-100 group-hover:ml-0 group-hover:mr-2 group-hover:text-[#f95738] transition-all duration-300 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 10c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>
+                  <span class="tracking-wide text-[13px] transition-colors duration-300">learning</span>
+               </div>
             </div>
 
          </div>
@@ -83,84 +93,132 @@
          <div class="acc-tab flex-[1] h-full rounded-[2rem] transition-all duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)] overflow-hidden bg-[#161616] group hover:bg-[#1a1a1a] p-6 md:p-8 relative cursor-pointer border border-white/5 flex flex-col justify-between" data-tab="2">
             
             <div class="w-full flex flex-col items-start z-10">
-               <div class="w-10 h-[1px] bg-white/20 mb-6"></div>
+               <div class="w-10 h-[1px] bg-white/20 mb-6 acc-line transition-opacity duration-300 block"></div>
                <div class="flex items-center">
-                  <svg class="w-7 h-7 text-white/40 group-hover:text-white/80 transition-colors duration-500 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14m-5-5l5 5 5-5"/></svg>
-                  <span class="text-4xl lg:text-3xl xl:text-4xl font-light tracking-tight text-white/40 transition-all duration-700">02</span>
+                  <div class="acc-icon-inactive block mr-2">
+                     <svg class="w-7 h-7 text-white/40 transition-colors duration-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14m-5-5l5 5 5-5"/></svg>
+                  </div>
+                  <div class="acc-icon-active hidden mr-4">
+                     <svg class="w-8 h-8 lg:w-10 lg:h-10 text-white/90 transition-transform duration-500 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 7h10v10M17 7L6 18"/></svg>
+                  </div>
+                  <span class="acc-num text-4xl lg:text-3xl xl:text-4xl font-light tracking-tight text-white/40 transition-all duration-700">02</span>
                </div>
             </div>
             
-            <div class="acc-content w-full flex flex-col justify-end opacity-0 pointer-events-none transition-opacity duration-300 mt-auto h-full absolute inset-0 p-6 md:p-8 z-0">
-               <div class="mt-auto pointer-events-none translate-y-8 acc-graphics transition-transform duration-700">
-                  <h4 class="text-white text-3xl font-[500] tracking-tight mb-4">Design Intelligence</h4>
-                  <p class="text-white/60 text-sm leading-relaxed max-w-[90%]">
-                     Automated infrastructure architect that designs and adapts your perfect environment seamlessly.
+            <div class="acc-content w-full flex flex-col pt-12 opacity-0 pointer-events-none transition-opacity duration-300 h-full absolute inset-0 p-6 md:p-8 z-0">
+               <div class="mt-auto pointer-events-none translate-y-8 acc-graphics transition-transform duration-700 w-full flex flex-col h-full justify-end pb-8">
+                  <h4 class="text-white text-[1.8rem] lg:text-[2rem] font-[500] tracking-[-0.03em] leading-tight mb-4 pointer-events-auto">Design Intelligence</h4>
+                  <p class="text-white/90 text-[13px] leading-relaxed max-w-[95%] mb-6 pointer-events-auto">
+                     An automated architecture engine that designs and adapts your infrastructure on the fly for peak performance and reliability.
                   </p>
-                  <div class="flex items-center gap-2 mt-8 text-white/50 font-medium tracking-tight mb-2 uppercase text-xs">
+                  
+                  <div class="w-full h-auto min-h-[160px] lg:min-h-[220px] rounded-[1.5rem] overflow-hidden shadow-xl transform translate-y-0 transition-all duration-[800ms] delay-300 pointer-events-auto flex-1 mb-8 bg-black/10">
+                     <!-- Replace src below -->
+                     <img src="https://framerusercontent.com/images/cjUCrOUpaHvRub5zRJbuwPVTmSY.jpg?width=800&height=800" class="w-full h-full object-cover">
+                  </div>
+                  
+                  <div class="flex items-center gap-2 text-white/90 font-medium tracking-tight text-[13px] pointer-events-auto mt-auto">
+                     <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg>
                      architecture
                   </div>
                </div>
             </div>
 
-            <div class="acc-title-inactive absolute bottom-8 left-6 md:left-8 opacity-100 transition-opacity duration-700 z-10 pointer-events-none">
-               <span class="text-white/40 group-hover:text-white/80 tracking-wide text-sm">architecture</span>
+            <div class="acc-title-inactive absolute bottom-8 left-6 md:left-8 opacity-100 transition-opacity duration-300 z-10 pointer-events-none block">
+               <div class="flex items-center overflow-hidden transition-all duration-300 group-hover:text-[#f95738] text-white/40 pointer-events-auto cursor-pointer pb-[4px]">
+                  <svg class="w-0 h-5 opacity-0 inline-block -ml-2 group-hover:w-5 group-hover:opacity-100 group-hover:ml-0 group-hover:mr-2 group-hover:text-[#f95738] transition-all duration-300 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg>
+                  <span class="tracking-wide text-[13px] transition-colors duration-300">architecture</span>
+               </div>
             </div>
+
          </div>
 
          <!-- TAB 03 -->
          <div class="acc-tab flex-[1] h-full rounded-[2rem] transition-all duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)] overflow-hidden bg-[#161616] group hover:bg-[#1a1a1a] p-6 md:p-8 relative cursor-pointer border border-white/5 flex flex-col justify-between" data-tab="3">
             
             <div class="w-full flex flex-col items-start z-10">
-               <div class="w-10 h-[1px] bg-white/20 mb-6"></div>
+               <div class="w-10 h-[1px] bg-white/20 mb-6 acc-line transition-opacity duration-300 block"></div>
                <div class="flex items-center">
-                  <svg class="w-7 h-7 text-white/40 group-hover:text-white/80 transition-colors duration-500 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14m-5-5l5 5 5-5"/></svg>
-                  <span class="text-4xl lg:text-3xl xl:text-4xl font-light tracking-tight text-white/40 transition-all duration-700">03</span>
+                  <div class="acc-icon-inactive block mr-2">
+                     <svg class="w-7 h-7 text-white/40 transition-colors duration-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14m-5-5l5 5 5-5"/></svg>
+                  </div>
+                  <div class="acc-icon-active hidden mr-4">
+                     <svg class="w-8 h-8 lg:w-10 lg:h-10 text-white/90 transition-transform duration-500 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 7h10v10M17 7L6 18"/></svg>
+                  </div>
+                  <span class="acc-num text-4xl lg:text-3xl xl:text-4xl font-light tracking-tight text-white/40 transition-all duration-700">03</span>
                </div>
             </div>
             
-            <div class="acc-content w-full flex flex-col justify-end opacity-0 pointer-events-none transition-opacity duration-300 mt-auto h-full absolute inset-0 p-6 md:p-8 z-0">
-               <div class="mt-auto pointer-events-none translate-y-8 acc-graphics transition-transform duration-700">
-                  <h4 class="text-white text-3xl font-[500] tracking-tight mb-4">Security AI</h4>
-                  <p class="text-white/60 text-sm leading-relaxed max-w-[90%]">
-                     Proactive security system that evolves with new threats continuously without manual input.
+            <div class="acc-content w-full flex flex-col pt-12 opacity-0 pointer-events-none transition-opacity duration-300 h-full absolute inset-0 p-6 md:p-8 z-0">
+               <div class="mt-auto pointer-events-none translate-y-8 acc-graphics transition-transform duration-700 w-full flex flex-col h-full justify-end pb-8">
+                  <h4 class="text-white text-[1.8rem] lg:text-[2rem] font-[500] tracking-[-0.03em] leading-tight mb-4 pointer-events-auto">Security AI</h4>
+                  <p class="text-white/90 text-[13px] leading-relaxed max-w-[95%] mb-6 pointer-events-auto">
+                     A proactive defense system that anticipates and evolves with threats, keeping your data and platforms secure without manual oversight.
                   </p>
-                  <div class="flex items-center gap-2 mt-8 text-white/50 font-medium tracking-tight mb-2 uppercase text-xs">
+                  
+                  <div class="w-full h-auto min-h-[160px] lg:min-h-[220px] rounded-[1.5rem] overflow-hidden shadow-xl transform translate-y-0 transition-all duration-[800ms] delay-300 pointer-events-auto flex-1 mb-8 bg-black/10">
+                     <!-- Replace src below -->
+                     <img src="https://framerusercontent.com/images/cjUCrOUpaHvRub5zRJbuwPVTmSY.jpg?width=800&height=800" class="w-full h-full object-cover">
+                  </div>
+                  
+                  <div class="flex items-center gap-2 text-white/90 font-medium tracking-tight text-[13px] pointer-events-auto mt-auto">
+                     <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12Z"/><path d="M12 6c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6"/><path d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2"/></svg>
                      protection
                   </div>
                </div>
             </div>
 
-            <div class="acc-title-inactive absolute bottom-8 left-6 md:left-8 opacity-100 transition-opacity duration-700 z-10 pointer-events-none">
-               <span class="text-white/40 group-hover:text-white/80 tracking-wide text-sm">protection</span>
+            <div class="acc-title-inactive absolute bottom-8 left-6 md:left-8 opacity-100 transition-opacity duration-300 z-10 pointer-events-none block">
+               <div class="flex items-center overflow-hidden transition-all duration-300 group-hover:text-[#f95738] text-white/40 pointer-events-auto cursor-pointer pb-[4px]">
+                  <svg class="w-0 h-5 opacity-0 inline-block -ml-2 group-hover:w-5 group-hover:opacity-100 group-hover:ml-0 group-hover:mr-2 group-hover:text-[#f95738] transition-all duration-300 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12Z"/><path d="M12 6c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6"/><path d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2"/></svg>
+                  <span class="tracking-wide text-[13px] transition-colors duration-300">protection</span>
+               </div>
             </div>
+
          </div>
 
          <!-- TAB 04 -->
          <div class="acc-tab flex-[1] h-full rounded-[2rem] transition-all duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)] overflow-hidden bg-[#161616] group hover:bg-[#1a1a1a] p-6 md:p-8 relative cursor-pointer border border-white/5 flex flex-col justify-between" data-tab="4">
             
             <div class="w-full flex flex-col items-start z-10">
-               <div class="w-10 h-[1px] bg-white/20 mb-6"></div>
+               <div class="w-10 h-[1px] bg-white/20 mb-6 acc-line transition-opacity duration-300 block"></div>
                <div class="flex items-center">
-                  <svg class="w-7 h-7 text-white/40 group-hover:text-white/80 transition-colors duration-500 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14m-5-5l5 5 5-5"/></svg>
-                  <span class="text-4xl lg:text-3xl xl:text-4xl font-light tracking-tight text-white/40 transition-all duration-700">04</span>
+                  <div class="acc-icon-inactive block mr-2">
+                     <svg class="w-7 h-7 text-white/40 transition-colors duration-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14m-5-5l5 5 5-5"/></svg>
+                  </div>
+                  <div class="acc-icon-active hidden mr-4">
+                     <svg class="w-8 h-8 lg:w-10 lg:h-10 text-white/90 transition-transform duration-500 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 7h10v10M17 7L6 18"/></svg>
+                  </div>
+                  <span class="acc-num text-4xl lg:text-3xl xl:text-4xl font-light tracking-tight text-white/40 transition-all duration-700">04</span>
                </div>
             </div>
             
-            <div class="acc-content w-full flex flex-col justify-end opacity-0 pointer-events-none transition-opacity duration-300 mt-auto h-full absolute inset-0 p-6 md:p-8 z-0">
-               <div class="mt-auto pointer-events-none translate-y-8 acc-graphics transition-transform duration-700">
-                  <h4 class="text-white text-3xl font-[500] tracking-tight mb-4">Smart Scale</h4>
-                  <p class="text-white/60 text-sm leading-relaxed max-w-[90%]">
-                     Intelligent scaling system that grows and optimizes automatically adapting to traffic.
+            <div class="acc-content w-full flex flex-col pt-12 opacity-0 pointer-events-none transition-opacity duration-300 h-full absolute inset-0 p-6 md:p-8 z-0">
+               <div class="mt-auto pointer-events-none translate-y-8 acc-graphics transition-transform duration-700 w-full flex flex-col h-full justify-end pb-8">
+                  <h4 class="text-white text-[1.8rem] lg:text-[2rem] font-[500] tracking-[-0.03em] leading-tight mb-4 pointer-events-auto">Smart Scale</h4>
+                  <p class="text-white/90 text-[13px] leading-relaxed max-w-[95%] mb-6 pointer-events-auto">
+                     An intelligent scaling module that grows or streamlines resources automatically, ensuring your applications always run at the right capacity.
                   </p>
-                  <div class="flex items-center gap-2 mt-8 text-white/50 font-medium tracking-tight mb-2 uppercase text-xs">
+                  
+                  <div class="w-full h-auto min-h-[160px] lg:min-h-[220px] rounded-[1.5rem] overflow-hidden shadow-xl transform translate-y-0 transition-all duration-[800ms] delay-300 pointer-events-auto flex-1 mb-8 bg-black/10">
+                     <!-- Replace src below -->
+                     <img src="https://framerusercontent.com/images/cjUCrOUpaHvRub5zRJbuwPVTmSY.jpg?width=800&height=800" class="w-full h-full object-cover">
+                  </div>
+                  
+                  <div class="flex items-center gap-2 text-white/90 font-medium tracking-tight text-[13px] pointer-events-auto mt-auto">
+                     <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.97-4.47 8-9.97 8-14.5a3.5 3.5 0 0 0-7 0 3.5 3.5 0 0 0-7 0c0 4.53 3.03 10.03 8 14.5z"/></svg>
                      growth
                   </div>
                </div>
             </div>
 
-            <div class="acc-title-inactive absolute bottom-8 left-6 md:left-8 opacity-100 transition-opacity duration-700 z-10 pointer-events-none">
-               <span class="text-white/40 group-hover:text-white/80 tracking-wide text-sm">growth</span>
+            <div class="acc-title-inactive absolute bottom-8 left-6 md:left-8 opacity-100 transition-opacity duration-300 z-10 pointer-events-none block">
+               <div class="flex items-center overflow-hidden transition-all duration-300 group-hover:text-[#f95738] text-white/40 pointer-events-auto cursor-pointer pb-[4px]">
+                  <svg class="w-0 h-5 opacity-0 inline-block -ml-2 group-hover:w-5 group-hover:opacity-100 group-hover:ml-0 group-hover:mr-2 group-hover:text-[#f95738] transition-all duration-300 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4.97-4.47 8-9.97 8-14.5a3.5 3.5 0 0 0-7 0 3.5 3.5 0 0 0-7 0c0 4.53 3.03 10.03 8 14.5z"/></svg>
+                  <span class="tracking-wide text-[13px] transition-colors duration-300">growth</span>
+               </div>
             </div>
+
          </div>
 
       </div>
@@ -188,7 +246,7 @@
             </div>
 
             <!-- Decorative Grid Pattern -->
-            <div class="w-full mt-10 mb-8 grid grid-cols-5 gap-y-8 opacity-80 pl-4 pr-12">
+            <div class="w-full mt-10 mb-8 grid grid-cols-5 gap-y-8 opacity-80 pl-4 pr-12" id="right-card-grid">
                <!-- Row 1 -->
                <div class="w-1.5 h-1.5 rounded-full bg-white/20 mx-auto"></div>
                <div class="w-1.5 h-1.5 rounded-full bg-white/20 mx-auto"></div>

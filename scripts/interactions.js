@@ -45,92 +45,170 @@ function initInteractions() {
   // 2. Services Horizontal Accordion Toggle
   const accTabs = document.querySelectorAll('.acc-tab');
   const accIndicators = document.querySelectorAll('#accordion-indicators .indicator');
+  const rightGrid = document.getElementById('right-card-grid');
+
+  // Decorative grid variations per tab (array of [row, col, type])
+  const gridPatterns = [
+    // Tab 1 Grid 
+    [[1,5,'caret'], [2,2,'dot'], [3,4,'dot'], [4,1,'dot'], [5,2,'dot']],
+    // Tab 2 Grid
+    [[3,3,'dot'], [3,5,'dot'], [4,4,'dot'], [5,2,'dot'], [5,4,'dot']],
+    // Tab 3 Grid
+    [[4,1,'dot'], [4,2,'dot'], [4,3,'dot'], [4,5,'dot'], [5,2,'dot']],
+    // Tab 4 Grid
+    [[2,2,'dot'], [3,5,'dot'], [4,1,'dot'], [4,4,'dot'], [5,3,'dot']]
+  ];
+
+  function updateRightGrid(tabIndex) {
+    if (!rightGrid || !gridPatterns[tabIndex]) return;
+    const activePoints = gridPatterns[tabIndex];
+    let html = '';
+    
+    for (let r = 1; r <= 5; r++) {
+      html += `<!-- Row ${r} -->\n`;
+      for (let c = 1; c <= 5; c++) {
+        const found = activePoints.find(d => d[0] === r && d[1] === c);
+        if (found) {
+          if (found[2] === 'caret') {
+            html += `<div class="w-0 h-0 border-l-[3.5px] border-l-transparent border-r-[3.5px] border-r-transparent border-t-[5px] border-t-[#f95738] mx-auto mt-[1px]"></div>\n`;
+          } else {
+            html += `<div class="w-1.5 h-1.5 rounded-full bg-[#f95738] mx-auto opacity-100 scale-110 transition-all duration-500"></div>\n`;
+          }
+        } else {
+          html += `<div class="w-1.5 h-1.5 rounded-full bg-white/20 mx-auto transition-all duration-300"></div>\n`;
+        }
+      }
+    }
+    rightGrid.innerHTML = html;
+  }
   
   if (accTabs.length > 0) {
+    // Render initial grid
+    updateRightGrid(0);
+
     accTabs.forEach((tab, index) => {
       tab.addEventListener('click', () => {
         // Reset all tabs to collapsed state
         accTabs.forEach((t, i) => {
-          // Shrink flex
           t.style.flex = '1';
           t.classList.remove('flex-[4]', 'bg-pf-orange');
           t.classList.add('flex-[1]', 'bg-[#161616]', 'hover:bg-[#1a1a1a]');
           
-          // Show collapsed number
-          const collapsedNum = t.querySelector('span.text-3xl, span.text-4xl, span.text-5xl');
-          if(collapsedNum && !collapsedNum.classList.contains('text-white/80')) {
-             collapsedNum.className = 'text-4xl lg:text-3xl xl:text-4xl font-light tracking-tight text-white/40 transition-all duration-700';
+          // Switch numbers
+          const num = t.querySelector('.acc-num');
+          if(num) {
+             num.classList.remove('text-4xl', 'lg:text-5xl', 'text-white/80');
+             num.classList.add('text-4xl', 'lg:text-3xl', 'xl:text-4xl', 'text-white/40');
           }
           
-          // Show the small rotated arrow
-          const arrow = t.querySelector('svg');
-          if(arrow && arrow.classList.contains('lg:hidden')) {
-             // keep it existing, but maybe ensure it's visible if needed
+          // Toggle header lines/icons for inactive
+          const line = t.querySelector('.acc-line');
+          if (line) {
+             line.classList.remove('hidden');
+             line.classList.add('block');
+          }
+          const iconActive = t.querySelector('.acc-icon-active');
+          if (iconActive) {
+             iconActive.classList.remove('block');
+             iconActive.classList.add('hidden');
+          }
+          const iconInactive = t.querySelector('.acc-icon-inactive');
+          if (iconInactive) {
+             iconInactive.classList.remove('hidden');
+             iconInactive.classList.add('block');
           }
 
           // Hide inner content
           const content = t.querySelector('.acc-content');
-          if(content) {
+          if (content) {
              content.classList.remove('opacity-100', 'delay-200');
              content.classList.add('opacity-0', 'pointer-events-none');
           }
 
-          // Hide inner graphics via translation
+          // Hide inner graphics
           const graphics = t.querySelector('.acc-graphics');
           if (graphics) {
-             graphics.classList.remove('translate-y-0', 'delay-300');
+             graphics.classList.remove('translate-y-0', 'delay-300', 'bg-black/10');
              graphics.classList.add('translate-y-8');
           }
 
-          // Show vertical title
+          // Show vertical hover title
           const titleInactive = t.querySelector('.acc-title-inactive');
           if (titleInactive) {
-             titleInactive.classList.remove('hidden', 'opacity-0');
-             titleInactive.classList.add('opacity-100');
+             titleInactive.classList.remove('hidden');
+             titleInactive.classList.add('block');
+             
+             // Wait for display block before opacity
+             setTimeout(() => {
+                titleInactive.classList.remove('opacity-0');
+                titleInactive.classList.add('opacity-100');
+             }, 50);
           }
           
-          // Update indicator dots
+          // Reset indicator
           if (accIndicators[i]) {
-             accIndicators[i].className = 'w-3 h-[4px] bg-white/20 rounded-full indicator transition-colors';
+             accIndicators[i].className = 'w-[2px] h-[14px] bg-white/10 indicator transition-colors duration-300';
           }
         });
 
-        // Activate the clicked tab
+        // Activate clicked tab
         tab.style.flex = '4';
         tab.classList.remove('flex-[1]', 'bg-[#161616]', 'hover:bg-[#1a1a1a]');
         tab.classList.add('flex-[4]', 'bg-pf-orange');
 
-        // Update active number
-        const activeNum = tab.querySelector('span.text-3xl, span.text-4xl, span.text-5xl');
-        if(activeNum) {
-           activeNum.className = 'text-4xl lg:text-5xl font-light tracking-tight text-white/80 transition-all duration-700';
+        const activeNum = tab.querySelector('.acc-num');
+        if (activeNum) {
+           activeNum.classList.remove('lg:text-3xl', 'xl:text-4xl', 'text-white/40');
+           activeNum.classList.add('text-4xl', 'lg:text-5xl', 'text-white/80');
+        }
+
+        // Toggle header lines/icons for active
+        const line = tab.querySelector('.acc-line');
+        if (line) {
+           line.classList.remove('block');
+           line.classList.add('hidden');
+        }
+        const iconActive = tab.querySelector('.acc-icon-active');
+        if (iconActive) {
+           iconActive.classList.remove('hidden');
+           iconActive.classList.add('block');
+        }
+        const iconInactive = tab.querySelector('.acc-icon-inactive');
+        if (iconInactive) {
+           iconInactive.classList.remove('block');
+           iconInactive.classList.add('hidden');
         }
 
         // Show inner content
         const content = tab.querySelector('.acc-content');
-        if(content) {
+        if (content) {
            content.classList.remove('opacity-0', 'pointer-events-none');
            content.classList.add('opacity-100', 'delay-200');
         }
 
-        // Show inner graphics
         const graphics = tab.querySelector('.acc-graphics');
         if (graphics) {
            graphics.classList.remove('translate-y-8');
-           graphics.classList.add('translate-y-0', 'delay-300');
+           graphics.classList.add('translate-y-0', 'delay-300', 'bg-black/10');
         }
 
-        // Hide vertical title
         const titleInactive = tab.querySelector('.acc-title-inactive');
         if (titleInactive) {
            titleInactive.classList.remove('opacity-100');
-           titleInactive.classList.add('hidden'); // or keep it just opacity-0
+           titleInactive.classList.add('opacity-0');
+           setTimeout(() => {
+              titleInactive.classList.remove('block');
+              titleInactive.classList.add('hidden');
+           }, 300);
         }
 
-        // Update active indicator dot
+        // Update active indicator dot (this is for the bottom vertical bar indicator)
         if (accIndicators[index]) {
-           accIndicators[index].className = 'w-3 h-[4px] bg-pf-orange rounded-full indicator transition-colors';
+           accIndicators[index].className = 'w-[2px] h-[14px] bg-[#f95738] indicator transition-colors duration-300';
         }
+
+        // Trigger dynamic grid swap
+        updateRightGrid(index);
       });
     });
   }
