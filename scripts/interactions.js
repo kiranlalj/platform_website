@@ -241,13 +241,13 @@ function initInteractions() {
       setTimeout(() => {
         if(ui.title) ui.title.innerText = data[index].title;
         if(ui.desc) ui.desc.innerText = data[index].desc;
-        if(ui.metric) ui.metric.innerHTML = `${data[index].metric}<span class="text-xl md:text-2xl text-white/40 ml-1">${data[index].metricUnit}</span>`;
+        if(ui.metric) ui.metric.innerHTML = `${data[index].metric}<span class="text-xl md:text-2xl text-white/40 ml-2 font-normal">${data[index].metricUnit}</span>`;
         if(ui.label) ui.label.innerText = data[index].metricLbl;
         if(ui.icon) ui.icon.className = `fa-solid ${data[index].icon} text-7xl md:text-9xl text-white transition-all duration-700`;
         
         if(ui.dots) {
           Array.from(ui.dots).forEach((d, i) => {
-            d.className = i === index ? "h-2 w-8 bg-[#EF6D3D] rounded-full transition-all" : "h-2 w-2 bg-white/20 hover:bg-white/40 cursor-pointer rounded-full transition-all";
+            d.className = i === index ? "h-2 w-8 bg-[#f95738] rounded-full transition-all duration-300 shadow-[0_0_10px_rgba(249,87,56,0.3)]" : "h-[6px] w-[6px] bg-white/20 hover:bg-white/40 cursor-pointer rounded-full transition-all duration-300";
           });
         }
 

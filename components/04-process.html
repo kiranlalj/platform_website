@@ -1,76 +1,113 @@
 <!-- PROCESS (003) SECTION COMPONENT -->
-<section id="process" class="w-full bg-[#111] border-y border-white/5 px-6 md:px-12 py-24 md:py-32 flex justify-center overflow-hidden">
-  <div class="max-w-[1440px] w-full flex flex-col gap-16 md:gap-24 fade-up">
-
-    <!-- Section Header -->
-    <div class="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-20">
-      <div class="flex flex-col gap-2 shrink-0">
-        <span class="text-white lg:text-lg font-medium tracking-tight">Our Process</span>
-        <span class="text-white/40 font-mono text-sm">003</span>
-      </div>
-      <div class="flex flex-col gap-6 max-w-3xl">
-        <h3 class="text-3xl md:text-5xl lg:text-6xl font-[500] tracking-[-0.04em] leading-[1.05] text-white">
-          Optimized processes through simplified workflows.
-        </h3>
-        <p class="text-white/50 text-base md:text-lg leading-relaxed max-w-xl">
-          Seamless operations and processes from start to finish.
-        </p>
-      </div>
-    </div>
-
-    <!-- Process Slider Container -->
-    <div class="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 lg:gap-8 mt-12 fade-up">
-      
-      <!-- Interactive Slider Panel -->
-      <div class="relative w-full rounded-[2rem] bg-pf-card border border-white/5 p-8 md:p-16 flex flex-col justify-between min-h-[500px]">
-        <!-- Big Number / Icon -->
-        <div class="absolute right-12 top-12 md:right-24 md:top-24 opacity-20 transition-all duration-700">
-          <i id="ps-icon" class="fa-solid fa-cube text-7xl md:text-9xl text-white"></i>
+<section id="process" class="w-full bg-[#0a0a0a] min-h-screen relative px-5 lg:px-10 py-24 md:py-32 flex justify-center border-t border-white/5">
+   <div class="max-w-[1500px] w-full flex flex-col fade-up">
+ 
+     <!-- Header -->
+     <div class="flex flex-col w-full pb-16 lg:pb-24">
+        <!-- Top Row -->
+        <h2 class="text-[4rem] sm:text-[5rem] lg:text-[7rem] xl:text-[8.5rem] font-[500] tracking-[-0.04em] text-[#e5e5e5] leading-none mb-12 lg:mb-20">
+           Our Process
+        </h2>
+        
+        <!-- Bottom Row -->
+        <div class="flex flex-col lg:flex-row w-full items-start gap-8 lg:gap-12 pl-1">
+           <!-- Column 1: 003 Indicator -->
+           <div class="flex flex-col lg:w-1/4 shrink-0">
+              <div class="flex items-start gap-4">
+                 <div class="w-[2px] h-[50px] bg-[#f95738]"></div>
+                 <div class="flex flex-col mt-[-4px]">
+                    <span class="text-[#e5e5e5] text-xl font-medium tracking-tight">003</span>
+                    <span class="text-white/40 text-sm tracking-tight mt-1">plat—form</span>
+                 </div>
+              </div>
+           </div>
+ 
+           <!-- Column 2: Center text -->
+           <div class="flex-1 lg:max-w-[45%] flex flex-col pt-2 lg:pt-0">
+              <h3 class="text-[2rem] sm:text-[2.5rem] lg:text-[2.8rem] xl:text-[3.2rem] font-[500] tracking-[-0.03em] leading-[1.1] text-[#e5e5e5]">
+                 Optimized processes through simplified workflows.
+              </h3>
+           </div>
+ 
+           <!-- Column 3: Right text -->
+           <div class="lg:w-[20%] flex flex-col pt-2 lg:pt-0 lg:ml-auto items-end">
+              <p class="text-white/40 text-[13.5px] leading-relaxed max-w-[200px] lg:text-right xl:-mr-12">
+                 Seamless operations and processes from start to finish.
+              </p>
+           </div>
         </div>
-
-        <div class="flex flex-col max-w-xl z-10 transition-all duration-500" style="opacity: 1;">
-          <h4 id="ps-title" class="text-2xl md:text-4xl font-[500] tracking-[-0.04em] text-white mb-6">Step 1 — Smart Connect</h4>
-          <p id="ps-desc" class="text-white/50 text-sm md:text-base leading-relaxed">
-            Platform’s AI analyzes your tech stack and swiftly configures your ideal environment. One connection is all it takes to set everything up following industry best practices.
-          </p>
-
-          <div class="mt-12 flex items-center gap-4 border-t border-white/10 pt-8">
-            <div id="ps-metric" class="text-4xl md:text-5xl font-mono text-[#EF6D3D]">30<span class="text-xl md:text-2xl text-white/40 ml-1">sec</span></div>
-            <span id="ps-metric-label" class="text-white/50 text-sm max-w-[120px] leading-tight ml-4">Average connection time</span>
+     </div>
+ 
+     <!-- Process Grid Container -->
+     <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mt-8 h-auto lg:h-[650px]">
+       
+       <!-- Left Media Box -->
+       <div class="rounded-[2rem] bg-[#0c0c0c] border border-white/5 overflow-hidden relative min-h-[400px] lg:min-h-full w-full group">
+          <!-- Placeholder Video/Image Block -->
+          <img src="https://framerusercontent.com/images/1W3w31o6Y2n8t7bN27B8m6t0s.png" alt="3D Process Render" class="w-full h-full object-cover opacity-80 mix-blend-screen scale-100 group-hover:scale-105 transition-transform duration-[2s] ease-out">
+       </div>
+ 
+       <!-- Right Interactive Content & Controls Box -->
+       <div class="flex flex-col w-full h-full rounded-[2rem] border border-white/5 overflow-hidden relative">
+          
+          <!-- Top Row: Process Info & Navigation -->
+          <div class="flex flex-row items-stretch w-full bg-[#161616] border-b border-white/5 h-[100px] lg:h-[120px] shrink-0 relative z-10">
+             
+             <!-- Platform Process Label & Tracker Dots -->
+             <div class="flex items-center justify-between flex-1 px-8 md:px-12">
+                <span class="text-white/60 text-lg md:text-[20px] font-medium tracking-tight">Platform Process</span>
+                
+                <!-- Dots Container tied to interactions.js -->
+                <div id="ps-dots" class="flex gap-[6px] items-center">
+                   <div class="h-2 w-8 bg-[#f95738] rounded-full transition-all duration-300 shadow-[0_0_10px_rgba(249,87,56,0.3)]"></div>
+                   <div class="h-[6px] w-[6px] bg-white/20 hover:bg-white/40 cursor-pointer rounded-full transition-all duration-300"></div>
+                   <div class="h-[6px] w-[6px] bg-white/20 hover:bg-white/40 cursor-pointer rounded-full transition-all duration-300"></div>
+                   <div class="h-[6px] w-[6px] bg-white/20 hover:bg-white/40 cursor-pointer rounded-full transition-all duration-300"></div>
+                </div>
+             </div>
+ 
+             <!-- Next/Prev Buttons -->
+             <div class="flex justify-center items-center w-[120px] lg:w-[140px] shrink-0 gap-6 px-4 border-l border-white/5">
+                <button id="ps-prev" class="text-[#f95738] hover:text-[#ff785a] transition-all cursor-not-allowed opacity-40 group outline-none">
+                   <svg class="w-6 h-6 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                </button>
+                <button id="ps-next" class="text-[#f95738] hover:text-[#ff785a] transition-all group outline-none">
+                   <svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </button>
+             </div>
           </div>
-        </div>
-
-        <!-- Slider Controls -->
-        <div class="flex items-center justify-between w-full mt-16 z-10">
-          <div id="ps-dots" class="flex gap-2">
-            <div class="h-2 w-8 bg-[#EF6D3D] rounded-full transition-all"></div>
-            <div class="h-2 w-2 bg-white/20 hover:bg-white/40 cursor-pointer rounded-full transition-all"></div>
-            <div class="h-2 w-2 bg-white/20 hover:bg-white/40 cursor-pointer rounded-full transition-all"></div>
-            <div class="h-2 w-2 bg-white/20 hover:bg-white/40 cursor-pointer rounded-full transition-all"></div>
+ 
+          <!-- Bottom Content Data Area -->
+          <div class="flex-1 flex flex-col justify-start bg-[#121212] p-8 md:p-12 lg:p-14 relative z-0 min-h-[400px]">
+             <!-- Hidden icon necessary for script binding, styled away so it doesn't break flow -->
+             <i id="ps-icon" class="hidden absolute opacity-0 w-0 h-0 fa-solid fa-cube text-transparent pointer-events-none"></i>
+ 
+             <div class="flex flex-col transition-all duration-[600ms] w-full mt-4 h-full">
+                <!-- Data Targets for interactions.js -->
+                <h4 id="ps-title" class="text-3xl lg:text-[2.4rem] xl:text-[2.6rem] font-[400] tracking-[-0.03em] text-white leading-[1.15] mb-8">
+                   Step 1 — Smart Connect
+                </h4>
+                
+                <p id="ps-desc" class="text-white/40 text-[14.5px] leading-[1.9] max-w-xl">
+                   Platform’s AI analyzes your tech stack and swiftly configures your ideal environment. One connection is all it takes to set everything up following industry best practices.
+                </p>
+ 
+                <div class="mt-auto flex items-center gap-6 relative">
+                   <!-- Decorative accent above metrics -->
+                   <div class="absolute -top-10 left-0 w-8 h-[1px] bg-[#f95738]/50"></div>
+                   
+                   <div id="ps-metric" class="text-5xl md:text-[3.5rem] tracking-tight font-light text-[#e5e5e5]">
+                     30<span class="text-xl md:text-2xl text-white/40 ml-2 font-normal">sec</span>
+                   </div>
+                   <span id="ps-metric-label" class="text-white/40 text-[13px] md:text-sm max-w-[150px] leading-relaxed ml-4 font-medium tracking-wide">
+                     Average connection time
+                   </span>
+                </div>
+             </div>
           </div>
-          <div class="flex gap-3">
-            <button id="ps-prev" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:bg-white/5 hover:text-white transition-all cursor-not-allowed opacity-40">
-              <i class="fa-solid fa-arrow-left"></i>
-            </button>
-            <button id="ps-next" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:bg-white/5 hover:text-white transition-all">
-              <i class="fa-solid fa-arrow-right"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Static CTA Sidebar -->
-      <div class="flex flex-col gap-8 justify-end">
-        <div class="rounded-[2rem] bg-pf-black border border-white/5 p-8 lg:p-12 flex flex-col h-full hover:border-[#EF6D3D]/30 transition-colors">
-          <span class="text-white/50 text-sm font-medium mb-12">Book a Demo</span>
-          <h4 class="text-2xl font-[500] tracking-[-0.04em] text-white leading-tight mt-auto">Book a demo to see this process in action.</h4>
-          <p class="text-white/30 text-sm mt-6 mb-12 border-l-2 border-[#EF6D3D] pl-4">Questions about our process? We’re here to help.</p>
-          <button class="w-full py-4 mt-auto rounded-full bg-white text-black font-semibold text-sm hover:bg-gray-200 shadow-md transition-all">
-            See Platform in action
-          </button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
+ 
+       </div>
+     </div>
+ 
+   </div>
+ </section>
