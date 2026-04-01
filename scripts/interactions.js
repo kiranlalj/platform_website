@@ -42,42 +42,94 @@ function initInteractions() {
     }));
   }
 
-  // 2. Services Vertical Accordion Toggle
-  const accordionItems = document.querySelectorAll('.accordion-item');
-  if (accordionItems.length > 0) {
-    accordionItems.forEach(item => {
-      item.addEventListener('click', () => {
-        // Reset all items
-        accordionItems.forEach(el => {
-          el.style.flex = '1';
-          el.classList.remove('bg-pf-orange');
-          el.classList.add('bg-[#1c1c1c]');
+  // 2. Services Horizontal Accordion Toggle
+  const accTabs = document.querySelectorAll('.acc-tab');
+  const accIndicators = document.querySelectorAll('#accordion-indicators .indicator');
+  
+  if (accTabs.length > 0) {
+    accTabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        // Reset all tabs to collapsed state
+        accTabs.forEach((t, i) => {
+          // Shrink flex
+          t.style.flex = '1';
+          t.classList.remove('flex-[4]', 'bg-pf-orange');
+          t.classList.add('flex-[1]', 'bg-[#161616]', 'hover:bg-[#1a1a1a]');
           
-          const icon = el.querySelector('i');
-          if(icon) icon.className = 'fa-solid fa-arrow-down transform transition-transform group-hover:-rotate-45 text-white/40';
+          // Show collapsed number
+          const collapsedNum = t.querySelector('span.text-3xl, span.text-4xl, span.text-5xl');
+          if(collapsedNum && !collapsedNum.classList.contains('text-white/80')) {
+             collapsedNum.className = 'text-4xl lg:text-3xl xl:text-4xl font-light tracking-tight text-white/40 transition-all duration-700';
+          }
           
-          const title = el.querySelector('span.text-3xl, span.text-4xl, span.text-5xl');
-          if(title) title.classList.replace('text-white', 'text-white/50');
+          // Show the small rotated arrow
+          const arrow = t.querySelector('svg');
+          if(arrow && arrow.classList.contains('lg:hidden')) {
+             // keep it existing, but maybe ensure it's visible if needed
+          }
+
+          // Hide inner content
+          const content = t.querySelector('.acc-content');
+          if(content) {
+             content.classList.remove('opacity-100', 'delay-200');
+             content.classList.add('opacity-0', 'pointer-events-none');
+          }
+
+          // Hide inner graphics via translation
+          const graphics = t.querySelector('.acc-graphics');
+          if (graphics) {
+             graphics.classList.remove('translate-y-0', 'delay-300');
+             graphics.classList.add('translate-y-8');
+          }
+
+          // Show vertical title
+          const titleInactive = t.querySelector('.acc-title-inactive');
+          if (titleInactive) {
+             titleInactive.classList.remove('hidden', 'opacity-0');
+             titleInactive.classList.add('opacity-100');
+          }
           
-          const desc = el.querySelector('.accordion-desc');
-          if(desc) desc.classList.add('opacity-0', 'hidden');
+          // Update indicator dots
+          if (accIndicators[i]) {
+             accIndicators[i].className = 'w-3 h-[4px] bg-white/20 rounded-full indicator transition-colors';
+          }
         });
 
-        // Activate the clicked item
-        item.style.flex = '3';
-        item.classList.remove('bg-[#1c1c1c]', 'hover:bg-white/5');
-        item.classList.add('bg-white/5');
+        // Activate the clicked tab
+        tab.style.flex = '4';
+        tab.classList.remove('flex-[1]', 'bg-[#161616]', 'hover:bg-[#1a1a1a]');
+        tab.classList.add('flex-[4]', 'bg-pf-orange');
 
-        const icon = item.querySelector('i');
-        if(icon) icon.className = 'fa-solid fa-arrow-down -rotate-45 transition-transform text-pf-orange';
-        
-        const title = item.querySelector('span.text-3xl, span.text-4xl, span.text-5xl');
-        if(title) title.classList.replace('text-white/50', 'text-white');
-        
-        const desc = item.querySelector('.accordion-desc');
-        if(desc) {
-          desc.classList.remove('hidden');
-          setTimeout(() => desc.classList.remove('opacity-0'), 50);
+        // Update active number
+        const activeNum = tab.querySelector('span.text-3xl, span.text-4xl, span.text-5xl');
+        if(activeNum) {
+           activeNum.className = 'text-4xl lg:text-5xl font-light tracking-tight text-white/80 transition-all duration-700';
+        }
+
+        // Show inner content
+        const content = tab.querySelector('.acc-content');
+        if(content) {
+           content.classList.remove('opacity-0', 'pointer-events-none');
+           content.classList.add('opacity-100', 'delay-200');
+        }
+
+        // Show inner graphics
+        const graphics = tab.querySelector('.acc-graphics');
+        if (graphics) {
+           graphics.classList.remove('translate-y-8');
+           graphics.classList.add('translate-y-0', 'delay-300');
+        }
+
+        // Hide vertical title
+        const titleInactive = tab.querySelector('.acc-title-inactive');
+        if (titleInactive) {
+           titleInactive.classList.remove('opacity-100');
+           titleInactive.classList.add('hidden'); // or keep it just opacity-0
+        }
+
+        // Update active indicator dot
+        if (accIndicators[index]) {
+           accIndicators[index].className = 'w-3 h-[4px] bg-pf-orange rounded-full indicator transition-colors';
         }
       });
     });
